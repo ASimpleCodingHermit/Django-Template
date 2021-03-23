@@ -41,6 +41,15 @@
       {% if request.path == contact_url %}Contact{% else %}<a href="{{ contact_url }}"><i class="fa fa-comments"></i>
         Contact</a>{% endif %}
     </li>
+
+    {% if user.is_authenticated %}
+    {% url 'profile' as profile_url %}
+    <span>Welcome, {% if request.path == profile_url %}{{user.username}}{% else %}<a href="{{ profile_url }}">
+        {{user.username}}</a>{% endif %}</span>
+    <span><a href="{% url 'logout'%}">Logout</a></span>
+    {% else %}
+    <span><a href="{% url 'login'%}">Login</a></span>
+    {% endif %}
   </ul>
   <!-- Copyright -->
   <div class="copyright-text">2021 Lost Code</div>
