@@ -1,0 +1,47 @@
+<div class="aside">
+
+  <!-- Logo -->
+  <div class="logo">
+    <a href="#">Lost Code</a>
+  </div>
+  <!-- Navbar Toggler -->
+  <div class="nav-toggle">
+    <span></span>
+  </div>
+  <!-- Navigation -->
+  <ul class="nav">
+    <li>
+      {% url 'index' as index_url %}
+      {% if request.path == index_url %}Home{% else %}<a href="{{ index_url }}" class="active"><i
+          class="fa fa-home"></i>Home</a>{% endif %}
+    </li>
+    <li>
+      {% url 'about' as about_url %}
+      {% if request.path == about_url %}About{% else %}<a href="{{ about_url }}"><i class="fa fa-user"></i>
+        About</a>{% endif %}
+    </li>
+    <li>
+      {% url 'services' as services_url %}
+      {% if request.path == services_url %}Services{% else %}<a href="{{ services_url }}"><i class="fa fa-list"></i>
+        Services</a>{% endif %}
+    </li>
+    <li>
+      {% url 'portfolio' as portfolio_url %}
+      {% if request.path == portfolio_url %}Portfolio{% else %}<a href="{{ portfolio_url }}"><i
+          class="fa fa-briefcase"></i>
+        Portfolio</a>{% endif %}
+    </li>
+    <li>
+      {% url 'blog' as blog_url %}
+      {% if request.path == blog_url %}Blog{% else %}<a href="{{ blog_url }}"><i class="fa fa-envelope"></i>
+        Blog</a>{% endif %}
+    </li>
+    <li>
+      {% url 'contact' as contact_url %}
+      {% if request.path == contact_url %}Contact{% else %}<a href="{{ contact_url }}"><i class="fa fa-comments"></i>
+        Contact</a>{% endif %}
+    </li>
+  </ul>
+  <!-- Copyright -->
+  <div class="copyright-text">2021 Lost Code</div>
+</div>
